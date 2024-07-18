@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <button onclick="playGame('heads')">
+        heads
+    </button>
+    <button onclick="playGame('tails')">
+        tails
+    </button>
+    <script>
+     // Initialize score from localStorage or set default values
+const score = JSON.parse(localStorage.getItem('score')) || { wins: 0, losses: 0 };
+
+function playGame(guess) {
+    // Generate a random number to simulate a coin flip
+    const randomNumber = Math.random();
+    let result;
+
+    // Determine the result of the coin flip
+    if (randomNumber < 0.5) {
+        result = 'heads';
+    } else {
+        result = 'tails';
+    }
+
+    // Determine the message based on the guess and the result
+    let message;
+    if (guess === result) {
+        message = 'You win!';
+        score.wins++; // Increment wins if the guess is correct
+    } else {
+        message = 'You lose!';
+        score.losses++; // Increment losses if the guess is incorrect
+    }
+
+    // Update the score in localStorage
+    localStorage.setItem('score', JSON.stringify(score));
+    
+    // Log the guess, result, and updated score
+    console.log(`Guess: ${guess}, Result: ${result}, Wins: ${score.wins}, Losses: ${score.losses}`);
+}
+    </script>
+  </body>
+</html>

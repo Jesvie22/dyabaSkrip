@@ -1,0 +1,48 @@
+body{
+   margin: 0;
+    color: white;
+    font-family: Arial;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background-color: #0C359E;
+}
+
+.centered-div {
+    background-color: #F6F5F5;
+    padding: 20px;
+    color: #0C359E;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+
+.head-title{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 2rem 0;
+}
+.move-icon{
+    height: 50px;
+    
+}
+.btn-move-icon{
+    background-color: rgb(25, 25, 25);
+    border: 2px solid white;
+    border-radius: 70px;
+    padding: 30px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.reset-btn{
+    padding: 1rem;
+    font-size: 15px;
+    margin: 4rem 0;
+    cursor: pointer;
+}
